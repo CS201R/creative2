@@ -18,20 +18,43 @@ https://developer.edamam.com/edamam-docs-recipe-api-->
   <!-- Angular Material Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
   <script type="text/javascript" src="app.js"></script>
 </head>
-<body>
-  <header>
+<body ng-controller="cookbook">
+  <header layout="row" layout-align="space-between center">
     <h1>Our cookbook!</h1>
+    <div layout="row" layout-align="center center">
+      <md-input-container md-no-float>
+        <input ng-model="searchText" placeholder="Search Our Recipes">
+      </md-input-container>
+      <md-button ng-click="search()" class="md-raised md-primary searchButton">Search Recipes!</md-button>
+    </div>
   </header>
-  <div ng-controller="cookbook">
 
-    <md-input-container>
-      <label>Search Our Recipes</label>
-      <input ng-model="searchText">
-    </md-input-container>
-
+  <div class="loader" ng-show="loading" layout="row" layout-sm="column" layout-align="space-around">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
   </div>
+
+  <div class="no-recipes" ng-show="recipes.length == 0 && !loading" layout="row" layout-align="center start">
+    <p>No recipes found with {{searchedText}}. Try another keyword.</p>
+  </div>
+  <div ng-show="recipes.length > 0" layout="row" layout-wrap>
+    <div ng-repeat="hit in recipes" flex-gt-xs="25">
+      <md-card>
+        <img ng-src="{{hit.recipe.image}}" class="md-card-image" alt="Recipe Image">
+        <md-card-content>
+          <p>{{hit.recipe.label}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="open(hit.recipe.url)" class="md-icon-button" aria-label="Favorite">
+            <i class="material-icons">open_in_new</i>
+          </md-button>
+      </md-card>
+    </div>
+  </div>
+
 </body>
 </html>

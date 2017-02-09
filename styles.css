@@ -108,4 +108,21 @@ header {
   background-image: url('images/header.jpg');
   vertical-align: middle;
   line-height: 80px;
+  padding: 0px 10px;
+}
+
+md-input-container {
+  margin: 0px;
+  margin-top: 25px;
+}
+
+.loader {
+  margin: 20px;
+}
+
+.no-recipes {
+  margin-top: 50px;
+  font-size: x-large;
+  color: black;
+  font-weight: bold;
 }
