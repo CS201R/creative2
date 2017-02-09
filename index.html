@@ -1,3 +1,37 @@
-curl "https://api.edamam.com/search?q=chicken&app_id=d2bf1fb2&app_key=d75f521a8637036cfa268cb3a78fd825&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free"
+<!--curl "https://api.edamam.com/search?q=chicken&app_id=d2bf1fb2&app_key=d75f521a8637036cfa268cb3a78fd825&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free"
 
-https://developer.edamam.com/edamam-docs-recipe-api
+https://developer.edamam.com/edamam-docs-recipe-api-->
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="creative2">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Assignment 2</title>
+
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Our cookbook!</h1>
+  </header>
+  <div ng-controller="cookbook">
+
+    <md-input-container>
+      <label>Search Our Recipes</label>
+      <input ng-model="searchText">
+    </md-input-container>
+
+  </div>
+</body>
+</html>
